@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSA Practice Buddy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>DSA Practice Buddy</h1>
+  <div class="header-right">
+    <span id="progress"></span>
+    <button id="settingsBtn" class="ghost">⚙ AI Settings</button>
+  </div>
+</header>
+
+<main>
+  <aside>
+    <h2>Problems</h2>
+    <ul id="problemList"></ul>
+  </aside>
+
+  <section class="problem">
+    <div class="title-row">
+      <h2 id="pTitle"></h2>
+      <span id="pDiff" class="badge"></span>
+    </div>
+    <p id="pDesc"></p>
+    <pre id="pExample"></pre>
+
+    <label for="code">Your code (JavaScript)</label>
+    <textarea id="code" spellcheck="false"></textarea>
+
+    <div class="actions">
+      <button id="runBtn">▶ Run Tests</button>
+      <button id="resetBtn" class="ghost">Reset</button>
+      <button id="hintBtn" class="accent">💡 Hint</button>
+      <button id="reviewBtn" class="accent">🔍 Review My Code</button>
+    </div>
+
+    <div id="results"></div>
+    <div id="buddy" class="buddy hidden">
+      <h3>Buddy says</h3>
+      <div id="buddyText"></div>
+    </div>
+  </section>
+</main>
+
+<dialog id="settings">
+  <form method="dialog">
+    <h3>AI Settings</h3>
+    <p class="small">Optional. Bina key ke built-in hints milenge. Key sirf tere browser (localStorage) me save hoti hai.</p>
+    <label>Anthropic API key
+      <input id="apiKey" type="password" placeholder="sk-ant-...">
+    </label>
+    <div class="actions">
+      <button id="saveKey" value="save">Save</button>
+      <button id="clearKey" value="clear" class="ghost">Clear</button>
+      <button value="cancel" class="ghost">Close</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="problems.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
